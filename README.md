@@ -420,3 +420,225 @@ $ git reset
 Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
 $
 ```
+## Bundle 3
+### Exercise 1
+
+```bash
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/team-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git branch
+  dev
+  ft/bundle-2
+  ft/contact-page
+  ft/service-redesign
+  ft/team-page
+* main
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/team-page)
+$ git log
+commit 4929b063a9b34c608dac4c627aad7bd77d2dc899 (HEAD -> ft/team-page, origin/ft/team-page)
+Author: Olivier-Masabo <masaboolivier21@gmail.com>
+Date:   Fri Jul 18 14:59:55 2025 +0200
+
+    feat: add team page
+
+commit 007c069a58c9dc3bc2481e0acde32565059fd5a8 (origin/main, origin/HEAD, main, ft/contact-page)
+Author: Olivier-Masabo <masaboolivier21@gmail.com>
+Date:   Thu Jul 17 22:29:33 2025 +0200
+
+    making some changes in service page
+
+commit 076db84b68d58145d959580785312c350562407f
+Merge: 182f501 417fe41
+Author: Olivier Masabo <masaboolivier21@gmail.com>
+Date:   Thu Jul 17 19:19:43 2025 +0200
+
+    Complete bundle 2 tasks
+
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/team-page)
+$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/contact-page)
+$ git cherry-pick  4929b063a9b34c608dac4c627aad7bd77d2dc899
+[ft/contact-page 5effe66] feat: add team page
+ Date: Fri Jul 18 14:59:55 2025 +0200
+ 1 file changed, 11 insertions(+)
+ create mode 100644 team.html
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/contact-page)
+$ git log
+commit 5effe66ddae0588b7014abad4f26afd4e1f367ea (HEAD -> ft/contact-page)
+Author: Olivier-Masabo <masaboolivier21@gmail.com>
+Date:   Fri Jul 18 14:59:55 2025 +0200
+
+    feat: add team page
+
+commit 007c069a58c9dc3bc2481e0acde32565059fd5a8 (origin/main, origin/HEAD, main)
+Author: Olivier-Masabo <masaboolivier21@gmail.com>
+Date:   Thu Jul 17 22:29:33 2025 +0200
+
+    making some changes in service page
+
+commit 076db84b68d58145d959580785312c350562407f
+Merge: 182f501 417fe41
+Author: Olivier Masabo <masaboolivier21@gmail.com>
+Date:   Thu Jul 17 19:19:43 2025 +0200
+
+    Complete bundle 2 tasks
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/contact-page)
+$ git status
+On branch ft/contact-page
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        contact.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/contact-page)
+$ git add --all
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/contact-page)
+$ git commit -m "feat:add contant page"
+[ft/contact-page 0464819] feat:add contant page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 contact.html
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/contact-page)
+$ git push
+fatal: The current branch ft/contact-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/contact-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/contact-page)
+$   git push --set-upstream origin ft/contact-page
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (10/10), 1.86 KiB | 146.00 KiB/s, done.
+Total 10 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (5/5), completed with 2 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/Olivier-Masabo/Gym-Git-Exercise-Solutions.git
+remote:
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/Olivier-Masabo/Gym-Git-Exercise-Solutions/pull/new/ft/contact-page
+remote:
+To https://github.com/Olivier-Masabo/git-practice.git  
+ * [new branch]      ft/contact-page -> ft/contact-page
+branch 'ft/contact-page' set up to track 'origin/ft/contact-page'.
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/contact-page)
+$ git chechout -b ft/faq-page
+git: 'chechout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/contact-page)
+$ git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/faq-page)
+$ git add --all
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/faq-page)
+$ git status
+On branch ft/faq-page
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)    
+        new file:   faq.html
+
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/faq-page)
+$ git commit -m "feat: add faq page"
+[ft/faq-page f00dd22] feat: add faq page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 faq.html
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/faq-page)
+$ git push
+fatal: The current branch ft/faq-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/faq-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/faq-page)
+$  git push --set-upstream origin ft/faq-page
+local object.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/Olivier-Masabo/Gym-Git-Exercise-Solutions.git
+remote:
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/Olivier-Masabo/Gym-Git-Exercise-Solutions/pull/new/ft/faq-page
+remote:
+To https://github.com/Olivier-Masabo/git-practice.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+branch 'ft/faq-page' set up to track 'origin/ft/faq-page'.
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/faq-page)
+$ git log
+commit f00dd22c54f298257d2d6dbee72416b5307bd0d5 (HEAD -> ft/faq-page, origin/ft/faq-page)
+Author: Olivier-Masabo <masaboolivier21@gmail.com>
+Date:   Sat Jul 19 18:13:37 2025 +0200
+
+    feat: add faq page
+
+commit 0464819d9970aa4c2de0628b96783ef9b2f6f910 (origin/ft/contact-page, ft/contact-page)
+Author: Olivier-Masabo <masaboolivier21@gmail.com>
+Date:   Sat Jul 19 18:03:26 2025 +0200
+
+    feat:add contant page
+
+commit 5effe66ddae0588b7014abad4f26afd4e1f367ea
+Author: Olivier-Masabo <masaboolivier21@gmail.com>
+Date:   Fri Jul 18 14:59:55 2025 +0200
+
+    feat: add team page
+
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/faq-page)
+$ git revert 5effe66ddae0588b7014abad4f26afd4e1f367ea
+[ft/faq-page 960b772] Revert "feat: add team page"
+ 1 file changed, 11 deletions(-)
+ delete mode 100644 team.html
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/faq-page)
+$ git push 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 279 bytes | 93.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/Olivier-Masabo/Gym-Git-Exercise-Solutions.git
+To https://github.com/Olivier-Masabo/git-practice.git
+   f00dd22..960b772  ft/faq-page -> ft/faq-page
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (ft/faq-page)
+$
+```
